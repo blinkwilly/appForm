@@ -1,0 +1,134 @@
+/* Reset and base styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
+}
+
+body {
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  color: white;
+  background: linear-gradient(135deg, #50a3a2, #000a09, #025130);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: 400% 400%;
+  animation: gradientMove 12s ease infinite;
+}
+
+/* Animate gradient background */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Page/container wrapper */
+.container {
+  width: 100%;
+  max-width: 920px;
+  /* overall wrapper width */
+  background: rgba(255, 255, 255, 0.06);
+  padding: 40px;
+  /* generous outer padding */
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  /* center the form horizontally */
+  align-items: center;
+  /* center the form vertically inside container */
+  backdrop-filter: blur(8px);
+}
+
+/* Move heading styles into the contact form for clearer structure */
+.contact-form h1 {
+  font-size: 36px;
+  font-weight: 300;
+  margin: 0 0 18px 0;
+  color: #fff;
+}
+
+/* Input Fields */
+input {
+  width: 100%;
+  padding: 14px 16px;
+  margin: 10px 0;
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 8px;
+  background-color: rgba(255, 255, 255, 0.08);
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  outline: none;
+  transition: all 0.22s ease;
+}
+
+input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+input:focus {
+  border-color: #fff;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Button */
+button {
+  background-color: white;
+  color: #50a3a2;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 12px;
+  transition: background-color 0.18s ease, transform 0.12s ease;
+}
+
+button:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Form sizing and centering */
+.contact-form {
+  width: 100%;
+  max-width: 550px;
+  /* form constrained for readability */
+  margin: 0;
+  /* centering handled by .container */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  /* inputs should stretch to form width */
+  gap: 18px;
+  padding: 8px 0;
+}
+
+.contact-form h1,
+.contact-form p {
+  text-align: center;
+  width: 100%;
+}
+
+/* Keep inputs full width but constrained by .contact-form max-width */
+.contact-form input {
+  width: 100%;
+}
